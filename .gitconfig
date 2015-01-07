@@ -1,0 +1,18 @@
+[core]
+	excludesfile = ~/.gitignore
+	autocrlf = input
+[user]
+	name = Hayley Swimelar
+	email = hswimelar@gmail.com
+[push]
+	default = simple
+[pull]
+	rebase = true
+[rerere]
+	enabled = true
+[color]
+	ui = true
+[alias]
+	ci = commit
+	s = status -s
+	lg = log --oneline --decorate --all --graph
