@@ -1,5 +1,5 @@
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /home/hayley/.gitignore_global
 	autocrlf = input
 [user]
 	name = Hayley Swimelar
