@@ -10,6 +10,9 @@ colorscheme jellybeans
 
 " options for jslint
 let g:syntastic_jslint_checkers=['jslint']
+" options for rubocop
+let g:syntastic_ruby_checkers=['rubocop']
+" general options for syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {}
