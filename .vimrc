@@ -26,6 +26,9 @@ let g:syntastic_quiet_messages = {}
 " size of an "indent"
  set shiftwidth=4
 
+" Set Ruby tabs to 2 spaces
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+
 " Allows you to have multiple buffers open
  set hidden
 " Lines of code will not wrap to the next line
