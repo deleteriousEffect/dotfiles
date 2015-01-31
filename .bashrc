@@ -40,9 +40,16 @@ export LESSOPEN='|/usr/bin/lesspipe.sh %s 2>&-'
                 export LESS_TERMCAP_us=$'\E[01;32m'
 
 #-----------------------------------------------------------
-#aliases
+# Aliases
 #-----------------------------------------------------------
 
 alias git=hub
 
+alias cons=nmcli -pretty --fields active,ssid,signal,security device wifi list
+
+alias reconnect=systemctl restart NetworkManager
+
+#-----------------------------------------------------------
+# PATH exports
+#-----------------------------------------------------------
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

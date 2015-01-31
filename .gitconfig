@@ -16,3 +16,5 @@
 	ci = commit
 	s = status -s
 	lg = log --oneline --decorate --all --graph
+[hub]
+	protocol = https
