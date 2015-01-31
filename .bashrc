@@ -51,6 +51,8 @@ alias reconnect='systemctl restart NetworkManager'
 
 alias sudo='sudo '
 
+alias anyonethere='ping -c3 www.google.com'
+
 #-----------------------------------------------------------
 # PATH exports
 #-----------------------------------------------------------
