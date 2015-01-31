@@ -45,9 +45,11 @@ export LESSOPEN='|/usr/bin/lesspipe.sh %s 2>&-'
 
 alias git=hub
 
-alias cons=nmcli -pretty --fields active,ssid,signal,security device wifi list
+alias cons='nmcli -pretty --fields active,ssid,signal,security device wifi list'
 
-alias reconnect=systemctl restart NetworkManager
+alias reconnect='systemctl restart NetworkManager'
+
+alias sudo='sudo '
 
 #-----------------------------------------------------------
 # PATH exports
