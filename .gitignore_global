@@ -58,6 +58,7 @@ src/
 ### Linux ###
 *~
 *.swp
+*.swo
 
 # KDE directory preferences
 .directory
