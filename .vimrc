@@ -70,6 +70,8 @@ set t_Co=256
  " set pastetoggle=<F2>
 " Use ; instead of : to enter commands, saves a lot of keystrokes in the long run
  nnoremap ; :
+" Save all buffers on focus lost, ignore unnamed buffer warnings
+:au FocusLost * silent! wa
 
  "nerdtree stuff
  "
