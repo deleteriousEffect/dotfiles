@@ -5,8 +5,11 @@ filetype plugin indent on
 " Numbers on by default
 set number
 
+" Enable syntax highlighting
+ syntax enable
+
 " makes the colors all pretty
-colorscheme jellybeans
+colorscheme dracula
 
 " options for jslint
 let g:syntastic_jslint_checkers=['jslint']
@@ -62,8 +65,6 @@ autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
  set visualbell
 " Or just turn error bells off with this
  " set noerrorbells
-" Enable syntax highlighting
- syntax enable
 " Tell vim that your terminal supports 256 colors
 set t_Co=256
 " Toggle paste mode with F2
