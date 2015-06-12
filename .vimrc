@@ -15,6 +15,11 @@ colorscheme dracula
 let g:syntastic_jslint_checkers=['jslint']
 " options for rubocop
 let g:syntastic_ruby_checkers=['rubocop']
+" options for html
+let g:syntastic_html_checkers=['tidy']
+" options for sass
+let g:syntastic_sass_checkers=['sassc']
+
 " general options for syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
