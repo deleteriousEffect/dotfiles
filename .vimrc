@@ -16,9 +16,9 @@ let g:syntastic_jslint_checkers=['jslint']
 " options for rubocop
 let g:syntastic_ruby_checkers=['rubocop']
 " options for html
-let g:syntastic_html_checkers=['tidy']
+let g:syntastic_html_checkers=['validator']
 " options for sass
-let g:syntastic_sass_checkers=['sassc']
+let g:syntastic_sass_checkers=['sass']
 
 " general options for syntastic
 let g:syntastic_check_on_open=1
