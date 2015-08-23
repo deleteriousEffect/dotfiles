@@ -87,7 +87,7 @@ set pastetoggle=<F2>
  "start nerdtree when vim starts
  autocmd vimenter * NERDTree
  " Use normal arrsows
- let g:NERDTreeDirArrows=0
+ "let g:NERDTreeDirArrows=0
  
  "ctrl+n starts nerdtree
  map <C-n> :NERDTreeToggle<CR>
