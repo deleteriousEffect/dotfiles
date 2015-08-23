@@ -19,6 +19,9 @@ let g:syntastic_ruby_checkers=['rubocop']
 let g:syntastic_html_checkers=['validator']
 " options for sass
 let g:syntastic_sass_checkers=['sass']
+" options for c
+let g:syntastic_c_checkers=['gcc', 'make']
+
 
 " general options for syntastic
 let g:syntastic_check_on_open=1
@@ -83,6 +86,8 @@ set t_Co=256
  "
  "start nerdtree when vim starts
  autocmd vimenter * NERDTree
-
+ " Use normal arrsows
+ let g:NERDTreeDirArrows=0
+ 
  "ctrl+n starts nerdtree
  map <C-n> :NERDTreeToggle<CR>
