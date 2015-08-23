@@ -19,14 +19,14 @@ let g:syntastic_ruby_checkers=['rubocop']
 let g:syntastic_html_checkers=['validator']
 " options for sass
 let g:syntastic_sass_checkers=['sass']
-" options for c
-let g:syntastic_c_checkers=['gcc', 'make']
 
 
 " general options for syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {}
+" path to extra_conf for c family languages
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " size of a hard tabstop
  set tabstop=2
