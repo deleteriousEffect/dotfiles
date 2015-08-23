@@ -76,7 +76,7 @@ autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 " Tell vim that your terminal supports 256 colors
 set t_Co=256
 " Toggle paste mode with F2
- " set pastetoggle=<F2>
+set pastetoggle=<F2>
 " Use ; instead of : to enter commands, saves a lot of keystrokes in the long run
  nnoremap ; :
 " Save all buffers on focus lost, ignore unnamed buffer warnings
