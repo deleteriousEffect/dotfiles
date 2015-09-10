@@ -99,5 +99,7 @@ autocmd Filetype c let @m = 'i#include <stdio.h>int main(int argc, char *argv[
 " Macros for JavaScript
 " console.log
 autocmd Filetype javascript let @c = 'Iconsole.log(A);'
-autocmd Filetype javascript let @f = 'Ifucn€kb€kb€kb€kb'
+" wrap function
+autocmd Filetype javascript let @f = 'Ifunction ewi(A) {}'
+" wrap iife
 autocmd Filetype javascript let @i = 'ggO(function () {Go}());'
