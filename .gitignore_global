@@ -246,4 +246,4 @@ target/
 venv/
 
 # rope
-.ropeproject/globalnames
+.ropeproject/
