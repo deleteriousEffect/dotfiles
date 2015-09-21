@@ -241,3 +241,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# venv
+venv/
+
+# rope
+.ropeproject/globalnames
