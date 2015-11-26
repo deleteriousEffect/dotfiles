@@ -91,6 +91,10 @@ set pastetoggle=<F2>
  "ctrl+n starts nerdtree
  map <C-n> :NERDTreeToggle<CR>
 
+" Statusline stuff
+" Show the status line, even if there isn't a split
+set laststatus=2
+
 " Macros for C
 " Setup main function
 autocmd Filetype c let @m = 'i#include <stdio.h>int main(int argc, char *argv[]){return 0;}'
