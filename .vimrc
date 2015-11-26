@@ -1,6 +1,36 @@
-execute pathogen#infect()
+" Vundle Stuff
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-filetype plugin indent on
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Keep Plugin commands between vundle#begin/end.
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bash-support.vim'
+Plugin 'bling/vim-airline'
+Plugin 'fatih/vim-go'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'pangloss/vim-javascript'
+Plugin 'rstacruz/sparkup'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 
 " Numbers on by default
 set number
