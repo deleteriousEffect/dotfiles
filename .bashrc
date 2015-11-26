@@ -58,3 +58,4 @@ alias anyonethere='ping -c3 www.google.com'
 #-----------------------------------------------------------
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH="$PATH:/home/hayley/flow/"
+export PATH=$HOME/local/bin:$PATH

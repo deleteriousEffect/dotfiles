@@ -30,7 +30,7 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " size of a hard tabstop
  set tabstop=2
- 
+
 " Pressing tab in insert mode will use 4 spaces
  set softtabstop=2
 
@@ -88,11 +88,10 @@ set pastetoggle=<F2>
  autocmd vimenter * NERDTree
  " Use normal arrsows
  "let g:NERDTreeDirArrows=0
- 
  "ctrl+n starts nerdtree
  map <C-n> :NERDTreeToggle<CR>
 
- " Macros for C
+" Macros for C
 " Setup main function
 autocmd Filetype c let @m = 'i#include <stdio.h>int main(int argc, char *argv[]){return 0;}'
 
