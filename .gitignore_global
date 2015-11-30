@@ -247,3 +247,7 @@ venv/
 
 # rope
 .ropeproject/
+
+# YCM-generator files
+.ycm_extra_conf.*
+.color_coded
