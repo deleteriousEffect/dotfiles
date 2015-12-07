@@ -3,7 +3,7 @@
 	autocrlf = input
 [user]
 	name = Hayley Swimelar
-	email = hswimelar@gmail.com
+	email = hayley@linbit.com
 [push]
 	default = simple
 [pull]
@@ -16,5 +16,11 @@
 	ci = commit
 	s = status -s
 	lg = log --oneline --decorate --all --graph
+  ck = checkout
+	vdiff = difftool
 [hub]
 	protocol = https
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false

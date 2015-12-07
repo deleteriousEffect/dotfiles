@@ -75,6 +75,9 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " Set Javascript tabs to 4 spaces
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
+" Set Python tabs to 4 spaces
+autocmd Filetype python setlocal ts=4 sts=4 sw=4
+
 " Allows you to have multiple buffers open
  set hidden
 " Lines of code will not wrap to the next line
