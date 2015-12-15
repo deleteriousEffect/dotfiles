@@ -21,6 +21,8 @@
   ck = checkout
   cl = clone
   mb = merge --no-ff
+  pl = pull
+  ps = push
   rb = rebase
 [hub]
 	protocol = https
