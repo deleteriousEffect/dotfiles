@@ -14,10 +14,14 @@
 	ui = true
 [alias]
 	ci = commit
-	s = status -s
 	lg = log --oneline --decorate --all --graph
-  ck = checkout
+	s = status -s
 	vdiff = difftool
+  br = branch
+  ck = checkout
+  cl = clone
+  mb = merge --no-ff
+  rb = rebase
 [hub]
 	protocol = https
 [diff]
