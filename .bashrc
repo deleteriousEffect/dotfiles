@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \W]\$ '
 
 # color bash prompt
 #PS1='[\u@\h \W]\$ '  # To leave the default one
@@ -17,6 +17,21 @@ blue=$(tput setaf 4)
 green=$(tput setaf 2)
 
 PS1='\[$red\]\u\[$reset\] \[$blue\]\w\[$reset\] \[$red\]\$ \[$reset\]\[$green\] '
+
+#-------------------------------------------------------------------------------
+# Colored Man Pages!!
+#-------------------------------------------------------------------------------
+
+man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
 
 #-----------------------------------------------------------
 # Aliases
