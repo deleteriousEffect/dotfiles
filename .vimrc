@@ -131,6 +131,10 @@ set pastetoggle=<F2>
 " Show the status line, even if there isn't a split
 set laststatus=2
 
+" ctrlp stuff
+" Show more results
+let g:ctrlp_match_window = 'results:100'
+
 " Macros for C
 " Setup main function
 autocmd Filetype c let @m = 'i#include <stdio.h>int main(int argc, char *argv[]){return 0;}'
