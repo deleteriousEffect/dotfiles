@@ -118,14 +118,13 @@ set pastetoggle=<F2>
 " Save all buffers on focus lost, ignore unnamed buffer warnings
 :au FocusLost * silent! wa
 
- "nerdtree stuff
- "
- "start nerdtree when vim starts
- autocmd vimenter * NERDTree
- " Use normal arrsows
- "let g:NERDTreeDirArrows=0
- "ctrl+n starts nerdtree
- map <C-n> :NERDTreeToggle<CR>
+" Nerdtree stuff
+" Start nerdtree when vim starts
+"autocmd vimenter * NERDTree
+" Use normal arrows
+"let g:NERDTreeDirArrows=0
+"ctrl+n starts nerdtree
+map <C-n> :NERDTreeToggle<CR>
 
 " Statusline stuff
 " Show the status line, even if there isn't a split
