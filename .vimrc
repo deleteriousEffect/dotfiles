@@ -26,6 +26,7 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'rstacruz/sparkup'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
