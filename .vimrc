@@ -39,6 +39,17 @@ filetype plugin indent on    " required
 " Numbers on by default
 set number
 
+" Toggle relative numbers with ctrl+j
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-j> :call NumberToggle()<cr>
+
 " Enable syntax highlighting
  syntax enable
 
