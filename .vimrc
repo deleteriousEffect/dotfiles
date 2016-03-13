@@ -21,7 +21,6 @@ Plugin 'fatih/vim-go'
 Plugin 'jeaye/color_coded'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'nvie/vim-flake8'
-Plugin 'pangloss/vim-javascript'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'rstacruz/sparkup'
 Plugin 'scrooloose/nerdtree'
@@ -49,6 +48,10 @@ function! NumberToggle()
 endfunc
 
 nnoremap <C-j> :call NumberToggle()<cr>
+
+" Use Absolute numbers in insert mode
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
 
 " Enable syntax highlighting
  syntax enable
