@@ -52,6 +52,12 @@ endfunc
 
 nnoremap <leader>j :call NumberToggle()<cr>
 
+" YCM commands
+" Try to goto something interesting
+nnoremap <leader>g :YcmCompleter GoTo<cr>
+" Get the type of whatever's under the cursor
+nnoremap <leader>t :YcmCompleter GetType<cr>
+
 " Use Absolute numbers in insert mode
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
