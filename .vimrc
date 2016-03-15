@@ -93,6 +93,8 @@ let g:syntastic_ruby_checkers=['rubocop']
 let g:syntastic_html_checkers=['validator']
 " options for sass
 let g:syntastic_sass_checkers=['sass']
+" options for go
+let g:syntastic_go_checkers=['gometalinter']
 
 
 " general options for syntastic
