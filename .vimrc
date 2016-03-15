@@ -35,10 +35,13 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 
+" Space leader!!
+let mapleader = "\<Space>"
+
 " Numbers on by default
 set number
 
-" Toggle relative numbers with ctrl+j
+" Toggle relative numbers with <leader>j
 function! NumberToggle()
   if(&relativenumber == 1)
     set norelativenumber
@@ -47,7 +50,7 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <C-j> :call NumberToggle()<cr>
+nnoremap <leader>j :call NumberToggle()<cr>
 
 " Use Absolute numbers in insert mode
 autocmd InsertEnter * :set norelativenumber
@@ -146,8 +149,8 @@ set pastetoggle=<F2>
 "autocmd vimenter * NERDTree
 " Use normal arrows
 "let g:NERDTreeDirArrows=0
-"ctrl+n starts nerdtree
-map <C-n> :NERDTreeToggle<CR>
+"<leader>n starts nerdtree
+map <leader>n :NERDTreeToggle<CR>
 
 " Statusline stuff
 " Show the status line, even if there isn't a split
@@ -156,6 +159,8 @@ set laststatus=2
 " ctrlp stuff
 " Show more results
 let g:ctrlp_match_window = 'results:100'
+" Use leader for ctrlp
+let g:ctrlp_map = '<leader>p'
 
 " Macros for C
 " Setup main function
