@@ -50,6 +50,9 @@ alias anyonethere='ping -c3 www.google.com'
 #-----------------------------------------------------------
 # PATH exports
 #-----------------------------------------------------------
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH="$PATH:/home/hayley/flow/"
 export PATH=$HOME/local/bin:$PATH
