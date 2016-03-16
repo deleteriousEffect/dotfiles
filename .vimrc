@@ -67,7 +67,9 @@ autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
 " Better vim shell
-nnoremap <leader>s :!bash --rcfile <(cat ~/.bashrc; echo 'PS1="\[$red\]vim\[$reset\] \[$blue\]\W ($(git rev-parse --abbrev-ref HEAD))\[$reset\] \[$red\]£\[$reset\] "')<cr>
+nnoremap <leader>s :!bash --rcfile <(cat ~/.bashrc; echo 'PS1="\[$red\]vim
+      \ \[$reset\] \[$blue\]\W ($(git rev-parse --abbrev-ref HEAD))\[$reset\]
+      \ \[$red\]£\[$reset\] "')<cr>
 
 " Enable syntax highlighting
  syntax enable
