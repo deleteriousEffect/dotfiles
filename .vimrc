@@ -52,6 +52,10 @@ endfunc
 
 nnoremap <leader>j :call NumberToggle()<cr>
 
+" Navigate buffers with h and l
+nnoremap <leader>h :bp<cr>
+nnoremap <leader>l :bn<cr>
+
 " YCM commands
 " Try to goto something interesting
 nnoremap <leader>g :YcmCompleter GoTo<cr>
@@ -61,6 +65,9 @@ nnoremap <leader>i :YcmCompleter GetType<cr>
 " Use Absolute numbers in insert mode
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
+
+" Better vim shell
+nnoremap <leader>s :!bash --rcfile <(cat ~/.bashrc; echo 'PS1="\[$red\]vim\[$reset\] \[$blue\]\W ($(git rev-parse --abbrev-ref HEAD))\[$reset\] \[$red\]£\[$reset\] "')<cr>
 
 " Enable syntax highlighting
  syntax enable
@@ -82,7 +89,7 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>e <Plug>(go-implements)
 au FileType go nmap <Leader>d <Plug>(go-doc)
 
 " options for jslint
