@@ -169,6 +169,8 @@ set pastetoggle=<F2>
  nnoremap ; :
 " Save all buffers on focus lost, ignore unnamed buffer warnings
 :au FocusLost * silent! wa
+" Set a color column
+set colorcolumn=81
 
 " Nerdtree stuff
 " Start nerdtree when vim starts
