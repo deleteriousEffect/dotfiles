@@ -17,8 +17,8 @@ blue=$(tput setaf 4)
 green=$(tput setaf 2)
 
 PS1=' $(if [ $? -eq 0 ]; then \
-echo "\[$green\]:)\[$reset\]"; \
-else echo "\[$red\]:(\[$reset\]"; fi) \
+echo "\[$green\]✔\[$reset\]"; \
+else echo "\[$red\]✘\[$reset\]"; fi) \
 \[$red\]\u\[$reset\] \[$blue\]\w \
 $(if git_branch=$(git rev-parse --abbrev-ref HEAD 2>&1); \
 then echo "($git_branch) "; fi)\[$reset\]\
