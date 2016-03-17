@@ -16,7 +16,9 @@ red=$(tput setaf 1)
 blue=$(tput setaf 4)
 green=$(tput setaf 2)
 
-PS1='\[$red\]\u\[$reset\] \[$blue\]\w\[$reset\] \[$red\]\$ \[$reset\]\[$green\] '
+PS1=' $(if [ $? -eq 0 ]; then echo "\[$green\]:)\[$reset\]"; \
+else echo "\[$red\]:(\[$reset\]"; fi) \
+\[$red\]\u\[$reset\] \[$blue\]\w\[$reset\] \[$red\]\$ \[$reset\]'
 
 #-------------------------------------------------------------------------------
 # Colored Man Pages!!
