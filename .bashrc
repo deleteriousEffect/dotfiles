@@ -20,6 +20,14 @@ PS1=' $(if [ $? -eq 0 ]; then echo "\[$green\]:)\[$reset\]"; \
 else echo "\[$red\]:(\[$reset\]"; fi) \
 \[$red\]\u\[$reset\] \[$blue\]\w\[$reset\] \[$red\]\$ \[$reset\]'
 
+PS1=' $(if [ $? -eq 0 ]; then \
+echo "\[$green\]:)\[$reset\]"; \
+else echo "\[$red\]:(\[$reset\]"; fi) \
+\[$red\]\u\[$reset\] \[$blue\]\w \
+$(if git_branch=$(git rev-parse --abbrev-ref HEAD 2>&1); \
+then echo "($git_branch) "; fi)\[$reset\]\
+\[$red\]\$ \[$reset\]'
+
 #-------------------------------------------------------------------------------
 # Colored Man Pages!!
 #-------------------------------------------------------------------------------
