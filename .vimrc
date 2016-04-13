@@ -30,6 +30,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
+Plugin 'venantius/vim-eastwood'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 
