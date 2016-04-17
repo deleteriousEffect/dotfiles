@@ -1,5 +1,6 @@
 {:user
  {:plugins [
+            [cider/cider-nrepl "0.12.0"]
             [jonase/eastwood "0.2.1"]
             [lein-bikeshed "0.3.0"]
             [lein-cljfmt "0.5.1"]
