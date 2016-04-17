@@ -34,6 +34,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'venantius/vim-cljfmt'
 Plugin 'venantius/vim-eastwood'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/paredit.vim'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 
 " All of your Plugins must be added before the following line
