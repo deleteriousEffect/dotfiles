@@ -70,6 +70,8 @@ nnoremap <leader>l :bn<cr>
 nnoremap <leader>g :YcmCompleter GoTo<cr>
 " Get the type of whatever's under the cursor
 nnoremap <leader>i :YcmCompleter GetType<cr>
+" Seed language keywords.
+let g:ycm_seed_identifiers_with_syntax=1
 
 " Use Absolute numbers in insert mode
 autocmd InsertEnter * :set norelativenumber
