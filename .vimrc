@@ -63,7 +63,7 @@ nnoremap <leader>j :call NumberToggle()<cr>
 
 " Open and close the quick window
 nnoremap <leader>[ :copen<cr>
-nnoremap <leader>] :close<cr>
+nnoremap <leader>] :cclose<cr>
 
 " Navigate buffers with h and l
 nnoremap <leader>h :bp<cr>
