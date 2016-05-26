@@ -25,6 +25,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'rhysd/devdocs.vim'
 Plugin 'rstacruz/sparkup'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -49,6 +50,9 @@ let mapleader = "\<Space>"
 
 " Numbers on by default
 set number
+
+" K opens devdocs
+nmap K <Plug>(devdocs-under-cursor)
 
 " Toggle relative numbers with <leader>j
 function! NumberToggle()
