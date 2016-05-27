@@ -12,6 +12,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
+" Plugin 'jeaye/color_coded'
+" This is busted :(
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bash-support.vim'
@@ -20,8 +22,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'guns/vim-clojure-static'
-" This is busted :(
-" Plugin 'jeaye/color_coded'
+Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'rdnetto/YCM-Generator'
