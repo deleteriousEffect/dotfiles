@@ -80,6 +80,8 @@ nnoremap <leader>g :YcmCompleter GoTo<cr>
 nnoremap <leader>i :YcmCompleter GetType<cr>
 " Seed language keywords.
 let g:ycm_seed_identifiers_with_syntax=1
+" Auto close preview buffer.
+let g:ycm_autoclose_preview_window_after_insertion=1
 
 " Use Absolute numbers in insert mode
 autocmd InsertEnter * :set norelativenumber
