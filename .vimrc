@@ -16,10 +16,12 @@ Plugin 'VundleVim/Vundle.vim'
 " This is busted :(
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'bash-support.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
+Plugin 'guicolorscheme.vim'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'guns/vim-clojure-static'
 Plugin 'jmcantrell/vim-virtualenv'
@@ -39,7 +41,6 @@ Plugin 'venantius/vim-cljfmt'
 Plugin 'venantius/vim-eastwood'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/paredit.vim'
-Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -98,7 +99,23 @@ nnoremap <leader>s :!bash --rcfile <(cat ~/.bashrc; echo 'reset=$(tput sgr0)
  syntax enable
 
 " makes the colors all pretty
-colorscheme dracula
+set background=dark
+" IMPORTANT: Uncomment one of the following lines to force
+" using 256 colors (or 88 colors) if your terminal supports it,
+" but does not automatically use 256 colors by default.
+" set t_Co=256
+" set t_Co=88
+if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
+  \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+  " Use the guicolorscheme plugin to makes 256-color or 88-color
+  " terminal use GUI colors rather than cterm colors.
+  runtime! plugin/guicolorscheme.vim
+  GuiColorScheme solarized
+else
+  " For 8-color 16-color terminals or for gvim, just use the
+  " regular :colorscheme command.
+  colorscheme solarized
+endif
 
 " Go Stuff
 " vim-go extended syntax highlighting
@@ -184,8 +201,6 @@ autocmd Filetype python setlocal ts=4 sts=4 sw=4
  set visualbell
 " Or just turn error bells off with this
  " set noerrorbells
-" Tell vim that your terminal supports 256 colors
-set t_Co=256
 " Toggle paste mode with F2
 set pastetoggle=<F2>
 " Use ; instead of : to enter commands, saves a lot of keystrokes in the long run
