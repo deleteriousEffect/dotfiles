@@ -136,6 +136,12 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <leader>t <Plug>(go-test)
 
+" Leaders for git
+nnoremap <leader>gc :!git commit -a<cr>
+nnoremap <leader>gd :!git diff<cr>
+nnoremap <leader>gl :!git log --oneline --decorate --all --graph<cr>
+nnoremap <leader>gs :!git status -s<cr>
+
 " options for jslint
 let g:syntastic_jslint_checkers=['jslint']
 " options for rubocop
