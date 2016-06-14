@@ -134,6 +134,7 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-implements)
 au FileType go nmap <Leader>d <Plug>(go-doc)
+au FileType go nmap <Leader>r <Plug>(go-run)
 
 " options for jslint
 let g:syntastic_jslint_checkers=['jslint']
