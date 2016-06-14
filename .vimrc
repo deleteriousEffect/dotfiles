@@ -127,14 +127,14 @@ let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " Leader maps for go
+au FileType go nmap <Leader>d <Plug>(go-doc)
+au FileType go nmap <Leader>e <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>r <Plug>(go-run)
 au FileType go nmap <leader>a :GoAlternate<cr>
 au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-implements)
-au FileType go nmap <Leader>d <Plug>(go-doc)
-au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <leader>t <Plug>(go-test)
 
 " options for jslint
 let g:syntastic_jslint_checkers=['jslint']
