@@ -133,14 +133,8 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>r <Plug>(go-run)
 au FileType go nmap <leader>a :GoAlternate<cr>
 au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <leader>c <Plug>(go-coverage-toggle)
 au FileType go nmap <leader>t <Plug>(go-test)
-
-" Leaders for git
-nnoremap <leader>gc :!git commit -a<cr>
-nnoremap <leader>gd :!git diff<cr>
-nnoremap <leader>gl :!git log --oneline --decorate --all --graph<cr>
-nnoremap <leader>gs :!git status -s<cr>
 
 " options for jslint
 let g:syntastic_jslint_checkers=['jslint']
