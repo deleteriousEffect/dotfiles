@@ -157,7 +157,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {}
 let g:syntastic_aggregate_errors = 1
 
-yntastic_aggregate_errors = 1 path to extra_conf for c family languages
+" path to extra_conf for c family languages
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " size of a hard tabstop
