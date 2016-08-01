@@ -234,6 +234,8 @@ set laststatus=2
 let g:ctrlp_match_window = 'results:100'
 " Use leader for ctrlp
 let g:ctrlp_map = '<leader>p'
+" ignore files that git ignores
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Macros for C
 " Setup main function
