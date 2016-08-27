@@ -49,7 +49,7 @@ filetype plugin indent on    " required
 
 
 " Space leader!!
-let mapleader = "\<Space>"
+let mapleader = "<Space>"
 
 " Numbers on by default
 set number
