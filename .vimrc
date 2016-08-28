@@ -23,7 +23,7 @@ Plugin 'fatih/vim-go'
 Plugin 'guicolorscheme.vim'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'guns/vim-clojure-static'
-Plugin 'jeaye/color_coded'
+"Plugin 'jeaye/color_coded' Doesn't work with neovim >:(
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'nvie/vim-flake8'
@@ -43,10 +43,26 @@ Plugin 'venantius/vim-eastwood'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/paredit.vim'
 
+Plugin 'ervandew/supertab'
+Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " Space leader!!
 let mapleader = "\<Space>"
@@ -82,7 +98,7 @@ nnoremap <leader>g :YcmCompleter GoTo<cr>
 " Get the type of whatever's under the cursor
 nnoremap <leader>i :YcmCompleter GetType<cr>
 " Seed language keywords.
-let g:ycm_seed_identifiers_with_syntax=1
+"let g:ycm_seed_identifiers_with_syntax=1
 " Auto close preview buffer.
 let g:ycm_autoclose_preview_window_after_insertion=1
 
@@ -135,6 +151,10 @@ au FileType go nmap <leader>a :GoAlternate<cr>
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>c <Plug>(go-coverage-toggle)
 au FileType go nmap <leader>t <Plug>(go-test)
+" make vim-go only open quickfix windows
+let g:go_list_type = "quickfix"
+" use goimports for formatting
+let g:go_fmt_command = "goimports"
 
 " options for jslint
 let g:syntastic_jslint_checkers=['jslint']
