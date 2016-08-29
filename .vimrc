@@ -106,12 +106,6 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
-" Better vim shell
-nnoremap <leader>s :!bash --rcfile <(cat ~/.bashrc; echo 'reset=$(tput sgr0)
-      \ red=$(tput setaf 1) blue=$(tput setaf 4) PS1="\[$red\]vim
-      \ \[$reset\] \[$blue\]\W ($(git rev-parse --abbrev-ref HEAD))\[$reset\]
-      \ \[$red\]£\[$reset\] "')<cr>
-
 " Enable syntax highlighting
  syntax enable
 
