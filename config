@@ -1,0 +1,25 @@
+[global_config]
+  suppress_multiple_term_dialog = True
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    background_image = None
+    font = DejaVu Sans Mono 13.5
+    foreground_color = "#bdd67b"
+    login_shell = True
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    split_to_group = True
+    use_system_font = False
+  [[test]]
+    background_image = None
+    palette = "#282a36:#6272a4:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#44475a:#44475a:#ef2929:#50fa7b:#fce94f:#729fcf:#ad7fa8:#8be9fd:#f8f8f2"
