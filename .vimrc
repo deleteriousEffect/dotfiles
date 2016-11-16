@@ -160,6 +160,7 @@ let g:syntastic_html_checkers=['validator']
 let g:syntastic_sass_checkers=['sass']
 " options for go
 let g:syntastic_go_checkers=['gometalinter']
+let g:syntastic_go_gometalinter_args = "--deadline=90s"
 " options for python
 let g:syntastic_python_checkers=['python', 'pylint', 'pyflakes', 'flake8', 'pep8']
 
