@@ -164,6 +164,8 @@ let g:syntastic_go_checkers=['gometalinter']
 let g:syntastic_go_gometalinter_args = "--deadline=90s"
 " options for python
 let g:syntastic_python_checkers=['python', 'pylint', 'pyflakes', 'flake8', 'pep8']
+" options for clojure
+let g:syntastic_clojure_checkers=['eastwood']
 
 
 " general options for syntastic
