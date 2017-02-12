@@ -12,20 +12,25 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
+"Plugin 'jeaye/color_coded' Doesn't work with neovim >:(
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bash-support.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'guicolorscheme.vim'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'guns/vim-clojure-static'
-"Plugin 'jeaye/color_coded' Doesn't work with neovim >:(
+Plugin 'honza/vim-snippets'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'neovimhaskell/haskell-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'rhysd/devdocs.vim'
@@ -42,10 +47,6 @@ Plugin 'venantius/vim-cljfmt'
 Plugin 'venantius/vim-eastwood'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/paredit.vim'
-
-Plugin 'ervandew/supertab'
-Plugin 'honza/vim-snippets'
-Plugin 'SirVer/ultisnips'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
