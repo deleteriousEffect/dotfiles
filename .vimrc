@@ -35,6 +35,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'rhysd/devdocs.vim'
 Plugin 'rstacruz/sparkup'
+Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tmhedberg/SimpylFold'
@@ -128,6 +129,10 @@ else
   " regular :colorscheme command.
   colorscheme solarized
 endif
+
+" Rust Stuff
+" rustfmt on autosave
+let g:rustfmt_autosave = 1
 
 " Go Stuff
 " vim-go extended syntax highlighting
