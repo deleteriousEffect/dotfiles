@@ -133,6 +133,8 @@ endif
 " Rust Stuff
 " rustfmt on autosave
 let g:rustfmt_autosave = 1
+" options for python
+let g:syntastic_rust_checkers=['rustc']
 
 " Go Stuff
 " vim-go extended syntax highlighting
