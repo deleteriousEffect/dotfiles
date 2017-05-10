@@ -1,5 +1,7 @@
 [global_config]
   suppress_multiple_term_dialog = True
+  title_font = DejaVu Sans Mono 9
+  title_use_system_font = False
 [keybindings]
 [layouts]
   [[default]]
@@ -14,11 +16,13 @@
   [[default]]
     background_color = "#002b36"
     background_image = None
+    custom_command = TERM=xterm-256color bash -l
     font = DejaVu Sans Mono 13.5
     foreground_color = "#bdd67b"
     login_shell = True
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     split_to_group = True
+    use_custom_command = True
     use_system_font = False
   [[test]]
     background_image = None
