@@ -93,6 +93,9 @@ nnoremap <leader>] :cclose<cr>
 nnoremap <leader>h :bp<cr>
 nnoremap <leader>l :bn<cr>
 
+" Use ;; to enter normal mode.
+imap ;; <ESC>
+
 " YCM commands
 " Try to goto something interesting
 nnoremap <leader>g :YcmCompleter GoTo<cr>
