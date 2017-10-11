@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
-"Plugin 'jeaye/color_coded' Doesn't work with neovim >:(
+" Plugin 'jeaye/color_coded' Doesn't work with neovim >:(
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
@@ -58,7 +58,7 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsExpandTrigger = "<space>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
@@ -132,7 +132,7 @@ endif
 " Rust Stuff
 " rustfmt on autosave
 let g:rustfmt_autosave = 1
-" options for python
+" options for rust
 let g:syntastic_rust_checkers=['rustc']
 
 " Go Stuff
@@ -170,6 +170,7 @@ let g:syntastic_go_checkers=['gometalinter']
 let g:syntastic_go_gometalinter_args = "--deadline=90s"
 " options for python
 let g:syntastic_python_checkers=['python', 'pylint', 'pyflakes', 'flake8', 'pep8']
+let python_highlight_all=1
 " options for clojure
 let g:syntastic_clojure_checkers=['eastwood']
 
