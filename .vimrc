@@ -29,6 +29,7 @@ Plugin 'guns/vim-clojure-highlight'
 Plugin 'guns/vim-clojure-static'
 Plugin 'honza/vim-snippets'
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'luochen1990/rainbow'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'nvie/vim-flake8'
@@ -259,6 +260,10 @@ map <leader>n :NERDTreeToggle<CR>
 " Statusline stuff
 " Show the status line, even if there isn't a split
 set laststatus=2
+
+"RainbowParens stuff
+" Activate all rainbows everywhere!
+let g:rainbow_active = 1
 
 " ctrlp stuff
 " Show more results
