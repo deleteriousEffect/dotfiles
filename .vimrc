@@ -33,6 +33,7 @@ Plugin 'luochen1990/rainbow'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'nvie/vim-flake8'
+Plugin 'panozzaj/vim-autocorrect'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'rhysd/devdocs.vim'
 Plugin 'rstacruz/sparkup'
@@ -272,6 +273,9 @@ let g:ctrlp_match_window = 'results:100'
 let g:ctrlp_map = '<leader>p'
 " ignore files that git ignores
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Load autocorrections on startup
+autocmd VimEnter * call AutoCorrect()
 
 " Macros for C
 " Setup main function
