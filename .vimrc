@@ -284,3 +284,9 @@ autocmd Filetype javascript let @c = 'Iconsole.log(A);'
 autocmd Filetype javascript let @f = 'Ifunction ewi(A) {}'
 " wrap iife
 autocmd Filetype javascript let @i = 'ggO(function () {Go}());'
+
+" Clojure stuff.
+" require-reload on save
+autocmd BufWritePost Filetype clojure :Require<cr>
+" omnifunc completion
+let g:ycm_semantic_triggers = {'clojure' : ['.', '/', '(']}
