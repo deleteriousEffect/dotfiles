@@ -277,18 +277,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " Load autocorrections on startup
 autocmd VimEnter * call AutoCorrect()
 
-" Macros for C
-" Setup main function
-autocmd Filetype c let @m = 'i#include <stdio.h>int main(int argc, char *argv[]){return 0;}'
-
-" Macros for JavaScript
-" console.log
-autocmd Filetype javascript let @c = 'Iconsole.log(A);'
-" wrap function
-autocmd Filetype javascript let @f = 'Ifunction ewi(A) {}'
-" wrap iife
-autocmd Filetype javascript let @i = 'ggO(function () {Go}());'
-
 " Clojure stuff.
 " require-reload on save
 autocmd BufWritePost Filetype clojure :Require<cr>
