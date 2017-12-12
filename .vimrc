@@ -297,3 +297,7 @@ autocmd VimEnter * call AutoCorrect()
 autocmd BufWritePost Filetype clojure :Require<cr>
 " omnifunc completion
 let g:ycm_semantic_triggers = {'clojure' : ['.', '/', '(']}
+
+" Mail stuff.
+" Spell check
+autocmd Filetype mail setlocal spell spelllang=en_us
