@@ -30,3 +30,5 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+[gitreview]
+	username = hayswim
