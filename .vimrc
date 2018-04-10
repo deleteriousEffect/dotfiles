@@ -32,6 +32,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'luochen1990/rainbow'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'panozzaj/vim-autocorrect'
@@ -221,8 +222,10 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " Set Javascript tabs to 4 spaces
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
+" Python specific stuff
 " Set Python tabs to 4 spaces
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
+autocmd Filetype python IndentGuidesEnable
 
 " Treat .asm files as nasm
 autocmd BufRead,BufNewFile *.asm set filetype=nasm
