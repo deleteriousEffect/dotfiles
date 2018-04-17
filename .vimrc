@@ -227,6 +227,9 @@ autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype python IndentGuidesEnable
 
+" Yaml Stuff
+autocmd Filetype yaml IndentGuidesEnable
+
 " Treat .asm files as nasm
 autocmd BufRead,BufNewFile *.asm set filetype=nasm
 
