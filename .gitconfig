@@ -32,3 +32,5 @@
 	prompt = false
 [gitreview]
 	username = hayswim
+[rebase]
+	autosquash = true
