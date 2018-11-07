@@ -115,7 +115,10 @@ nnoremap <leader>h :bp<cr>
 nnoremap <leader>l :bn<cr>
 
 " Use ;; to enter normal mode.
-imap ;; <ESC>
+inoremap ;; <ESC>
+
+" Use ;;; to ;;.
+inoremap ;;;  ;;
 
 " YCM commands
 " Try to goto something interesting
