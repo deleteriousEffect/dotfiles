@@ -314,3 +314,11 @@ let g:ycm_semantic_triggers = {'clojure' : ['.', '/', '(']}
 " Mail stuff.
 " Spell check
 autocmd Filetype mail setlocal spell spelllang=en_us
+
+" Undo for the next 90 days
+set undofile
+set undodir=~/.vim/undodir
+
+let s:undos = split(globpath(&undodir, '*'), "\n")
+call filter(s:undos, 'getftime(v:val) < localtime() - (60 * 60 * 24 * 90)')
+call map(s:undos, 'delete(v:val)')
