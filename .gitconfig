@@ -14,7 +14,7 @@
 	ui = true
 [alias]
 	ci = commit
-	lg = log --oneline --decorate --all --graph
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	s = status -s
 	vdiff = difftool
   br = branch
