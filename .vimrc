@@ -213,6 +213,9 @@ let g:syntastic_aggregate_errors = 1
 " path to extra_conf for c family languages
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
+" help with that annoying -> syntax in C
+inoremap <space>. ->
+
 " size of a hard tabstop
  set tabstop=2
 
