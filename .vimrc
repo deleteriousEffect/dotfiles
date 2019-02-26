@@ -196,8 +196,8 @@ let g:syntastic_html_checkers=['validator']
 " options for sass
 let g:syntastic_sass_checkers=['sass']
 " options for go
-let g:syntastic_go_checkers=['gometalinter']
-let g:syntastic_go_gometalinter_args = "--deadline=90s"
+let g:syntastic_go_checkers = ['gometalinter']
+let g:syntastic_go_gometalinter_args = ['--enable-all', '--disable=lll', '--deadline=120s']
 " options for python
 let g:syntastic_python_checkers=['python', 'pylint', 'flake8']
 let python_highlight_all=1
