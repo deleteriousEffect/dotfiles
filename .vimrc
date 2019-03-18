@@ -147,17 +147,21 @@ set background=dark
 " but does not automatically use 256 colors by default.
 set t_Co=256
 " set t_Co=88
-if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
-  \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
-  " Use the guicolorscheme plugin to makes 256-color or 88-color
-  " terminal use GUI colors rather than cterm colors.
-  runtime! plugin/guicolorscheme.vim
-  GuiColorScheme solarized
-else
-  " For 8-color 16-color terminals or for gvim, just use the
-  " regular :colorscheme command.
-  colorscheme solarized
-endif
+try
+  if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
+        \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+    " Use the guicolorscheme plugin to makes 256-color or 88-color
+    " terminal use GUI colors rather than cterm colors.
+    runtime! plugin/guicolorscheme.vim
+    GuiColorScheme solarized
+  else
+    " For 8-color 16-color terminals or for gvim, just use the
+    " regular :colorscheme command.
+    colorscheme solarized
+  endif
+catch /.*/ " Should probably not catch everything, but w/e.
+  "failed to set colorscheme, continuing
+endtry
 
 " Rust Stuff
 " rustfmt on autosave
