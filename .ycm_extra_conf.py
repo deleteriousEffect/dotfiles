@@ -8,8 +8,7 @@ import ycm_core
 
 BASE_FLAGS = [
     "-DNDEBUG",
-    "-I/usr/include/",
-    "-I/usr/lib/",
+    "-I.",
     "-Waggregate-return",
     "-Wall",
     "-Wcast-align",
@@ -74,6 +73,8 @@ BASE_FLAGS = [
     "-pedantic",
     "-pedantic-errors",
     "-std=c99",
+    "-x",
+    "c",
 ]
 
 SOURCE_EXTENSIONS = [".cpp", ".cxx", ".cc", ".c", ".m", ".mm"]

@@ -132,6 +132,8 @@ nnoremap <leader>i :YcmCompleter GetType<cr>
 "let g:ycm_seed_identifiers_with_syntax=1
 " Auto close preview buffer.
 let g:ycm_autoclose_preview_window_after_insertion=1
+" Stop asking about the extra conf.
+let g:ycm_confirm_extra_conf = 0
 
 " Use Absolute numbers in insert mode
 autocmd InsertEnter * :set norelativenumber
@@ -200,8 +202,9 @@ let g:syntastic_html_checkers=['validator']
 " options for sass
 let g:syntastic_sass_checkers=['sass']
 " options for go
-let g:syntastic_go_checkers = ['gometalinter']
-let g:syntastic_go_gometalinter_args = ['--enable-all', '--disable=lll', '--deadline=120s']
+" let g:syntastic_go_checkers = ['gometalinter']
+" let g:syntastic_go_gometalinter_args = ['--enable-all', '--disable=lll', '--deadline=120s']
+let g:syntastic_go_checkers = ['go', 'golint', 'govet']
 " options for python
 let g:syntastic_python_checkers=['python', 'pylint', 'flake8']
 let python_highlight_all=1
@@ -215,11 +218,15 @@ let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {}
 let g:syntastic_aggregate_errors = 1
 
+" C Stuff
+"
 " path to extra_conf for c family languages
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " help with that annoying -> syntax in C
 inoremap ;/ ->
+" autocompete automatically-er with C
+let g:ycm_key_invoke_completion = '<leader>;'
 
 " size of a hard tabstop
  set tabstop=2
