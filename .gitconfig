@@ -17,6 +17,8 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	s = status -s
 	vdiff = difftool
+  d = diff
+  dif = diff
   br = branch
   ck = checkout
   cl = clone
@@ -28,6 +30,8 @@
 	protocol = https
 [diff]
 	tool = vimdiff
+[merge]
+	tool = meld
 [difftool]
 	prompt = false
 [gitreview]
