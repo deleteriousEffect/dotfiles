@@ -15,13 +15,19 @@
 [alias]
 	ci = commit
 	s = status -s
-	vdiff = difftool
   br = branch
   ck = checkout
   cl = clone
   d = diff
   dif = diff
+  dm = difftool --tool=meld
+  dms = difftool --tool=meld --staged
+  dms-no-vendor = difftool --tool=meld --staged ':!vendor'
   ds = diff --staged
+  ds-no-vendor = diff --staged ':!vendor'
+  dv = difftool --tool=vimdiff
+  dvs = difftool --tool=vimdiff --staged
+  dvs-no-vendor = difftool --tool=vimdiff --staged ':!vendor'
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   mb = merge --no-ff
   pl = pull
@@ -29,8 +35,6 @@
   rb = rebase
 [hub]
 	protocol = https
-[diff]
-	tool = vimdiff
 [merge]
 	tool = meld
 [difftool]
