@@ -188,6 +188,7 @@ au FileType go nmap <leader>a :GoAlternate<cr>
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>c <Plug>(go-coverage-toggle)
 au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>m <Plug>(go-metalinter)
 " make vim-go only open quickfix windows
 let g:go_list_type = "quickfix"
 " use goimports for formatting
@@ -202,9 +203,8 @@ let g:syntastic_html_checkers=['validator']
 " options for sass
 let g:syntastic_sass_checkers=['sass']
 " options for go
-" let g:syntastic_go_checkers = ['gometalinter']
-" let g:syntastic_go_gometalinter_args = ['--enable-all', '--disable=lll', '--deadline=120s']
 let g:syntastic_go_checkers = ['go', 'golint', 'govet']
+let g:go_metalinter_command='golangci-lint run'
 " options for python
 let g:syntastic_python_checkers=['python', 'pylint', 'flake8']
 let python_highlight_all=1
@@ -308,6 +308,12 @@ set laststatus=2
 "RainbowParens stuff
 " Activate all rainbows everywhere!
 let g:rainbow_active = 1
+
+" wrap long lines in quickfix
+augroup quickfix
+  autocmd!
+  autocmd FileType qf setlocal wrap
+augroup END
 
 " ctrlp stuff
 " Show more results

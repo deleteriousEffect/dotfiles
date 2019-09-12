@@ -14,14 +14,15 @@
 	ui = true
 [alias]
 	ci = commit
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	s = status -s
 	vdiff = difftool
-  d = diff
-  dif = diff
   br = branch
   ck = checkout
   cl = clone
+  d = diff
+  dif = diff
+  ds = diff --staged
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   mb = merge --no-ff
   pl = pull
   ps = push
