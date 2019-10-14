@@ -22,7 +22,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'bash-support.vim'
 Plugin 'bling/vim-airline'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
@@ -31,6 +30,7 @@ Plugin 'guns/vim-clojure-highlight'
 Plugin 'guns/vim-clojure-static'
 Plugin 'honza/vim-snippets'
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'junegunn/fzf.vim'
 Plugin 'luochen1990/rainbow'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -56,7 +56,6 @@ Plugin 'venantius/vim-eastwood'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'vim-scripts/spec.vim'
-Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -317,16 +316,9 @@ augroup quickfix
   autocmd FileType qf setlocal wrap
 augroup END
 
-" ctrlp stuff
-" Show more results
-" let g:ctrlp_match_window = 'results:100'
-" Use leader for ctrlp
-" let g:ctrlp_map = '<leader>p'
-" ignore files that git ignores
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " fzf stuff.
-"
+
 function! s:buflist()
   redir => ls
   silent ls
