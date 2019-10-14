@@ -4,6 +4,7 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -55,7 +56,7 @@ Plugin 'venantius/vim-eastwood'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'vim-scripts/spec.vim'
-Plugin 'zah/nim.vim'
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -318,11 +319,17 @@ augroup END
 
 " ctrlp stuff
 " Show more results
-let g:ctrlp_match_window = 'results:100'
+" let g:ctrlp_match_window = 'results:100'
 " Use leader for ctrlp
-let g:ctrlp_map = '<leader>p'
+" let g:ctrlp_map = '<leader>p'
 " ignore files that git ignores
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Open files in horizontal split
+nnoremap <silent> <Leader>p :call fzf#run({
+\   'down': '40%',
+\   'options': '--tiebreak=length,end,begin',
+\   'sink': 'botright split' })<CR>
 
 " Load autocorrections on startup
 autocmd VimEnter * call AutoCorrect()
