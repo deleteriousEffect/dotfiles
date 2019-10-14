@@ -349,6 +349,7 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 " Open files in horizontal split
 nnoremap <silent> <Leader>p :call fzf#run({
 \   'down': '40%',
+\   'source': 'git ls-files',
 \   'options': '--tiebreak=length,end,begin',
 \   'sink': 'botright split' })<CR>
 
