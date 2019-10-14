@@ -63,4 +63,16 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH="$PATH:/home/hayley/flow/"
 export PATH=$HOME/local/bin:$PATH
 
+# Diplay branch when on a git repo
+source ~/.git-prompt.sh
+# color bash prompt
+reset=$(tput sgr0)
+red=$(tput setaf 1)
+blue=$(tput setaf 4)
+
+PS1='\[$red\]\u\[$reset\] \[$blue\]\W$(__git_ps1 " (%s)")\[$reset\]\[$red\] \$\[$reset\] '
+
+# Get rid of horrible GUI user/pass dialgue.
+unset SSH_ASKPASS
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
