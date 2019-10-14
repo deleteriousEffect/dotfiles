@@ -341,32 +341,18 @@ nnoremap <silent> <Leader><Enter> :call fzf#run({
 " Open files in horizontal split
 nnoremap <silent> <Leader>p :call fzf#run({
 \   'down': '40%',
-\   'source': 'git ls-files',
 \   'options': '--tiebreak=length,end,begin',
 \   'sink': 'e' })<CR>
 
-function! s:line_handler(l)
-  let keys = split(a:l, ':\t')
-  exec 'buf' keys[0]
-  exec keys[1]
-  normal! ^zz
-endfunction
+" Search lines in files.
+command! -bang -nargs=* RgHidden
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+  \   <bang>0)
 
-function! s:buffer_lines()
-  let res = []
-  for b in filter(range(1, bufnr('$')), 'buflisted(v:val)')
-    call extend(res, map(getbufline(b,0,"$"), 'bufname(b) . ":\t" . (v:key + 1) . ":\t" . v:val '))
-  endfor
-  return res
-endfunction
-
-" Search lines in open buffers.
-nnoremap <silent> <Leader>/ :call fzf#run({
-\   'source':  <sid>buffer_lines(),
-\   'sink':    function('<sid>line_handler'),
-\   'options': '--extended --nth=3..',
-\   'down':    '60%'
-\})<CR>
+nnoremap <silent> <Leader>/ :RgHidden<CR>
 
 " Load autocorrections on startup
 autocmd VimEnter * call AutoCorrect()
