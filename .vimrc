@@ -55,6 +55,7 @@ Plugin 'venantius/vim-eastwood'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'vim-scripts/spec.vim'
+Plugin 'zah/nim.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
