@@ -338,6 +338,7 @@ function! s:bufopen(e)
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')
 endfunction
 
+" Open active buffers.
 nnoremap <silent> <Leader><Enter> :call fzf#run({
 \   'source':  reverse(<sid>buflist()),
 \   'sink':    function('<sid>bufopen'),
