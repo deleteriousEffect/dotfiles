@@ -6,14 +6,12 @@
 	email = hayley@linbit.com
 [push]
 	default = simple
-[pull]
-	rebase = true
 [rerere]
 	enabled = true
 [color]
 	ui = true
 [alias]
-	ci = commit
+	ci = commit -vv
 	s = status -s
   br = branch
   ck = checkout
@@ -32,6 +30,7 @@
   mb = merge --no-ff
   pl = pull
   ps = push
+  pushup = push --set-upstream origin HEAD
   rb = rebase
 [hub]
 	protocol = https

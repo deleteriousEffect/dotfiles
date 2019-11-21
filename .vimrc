@@ -36,7 +36,6 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'nvie/vim-flake8'
-Plugin 'panozzaj/vim-autocorrect'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'rhysd/devdocs.vim'
 Plugin 'rhysd/vim-clang-format'
@@ -344,18 +343,25 @@ nnoremap <silent> <Leader>p :call fzf#run({
 \   'options': '--tiebreak=length,end,begin',
 \   'sink': 'e' })<CR>
 
-" Search lines in files.
+" Search lines in files not in vendor.
 command! -bang -nargs=* RgHidden
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --hidden --ignore-case --glob="!vendor/*" --no-heading --color=always '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
   \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
   \   <bang>0)
 
 nnoremap <silent> <Leader>/ :RgHidden<CR>
 
-" Load autocorrections on startup
-autocmd VimEnter * call AutoCorrect()
+" Search lines in files.
+command! -bang -nargs=* RgHiddenAll
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+  \   <bang>0)
+
+nnoremap <silent> <Leader>? :RgHiddenAll<CR>
 
 " Clojure stuff.
 " require-reload on save
