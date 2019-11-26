@@ -3,7 +3,7 @@
 	autocrlf = input
 [user]
 	name = Hayley Swimelar
-	email = hayley@linbit.com
+	email = hswimelar@gitlab.com
 [push]
 	default = simple
 [rerere]

@@ -15,8 +15,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " Plugin 'jeaye/color_coded' Doesn't work with neovim >:(
 Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bash-support.vim'
@@ -36,7 +34,6 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'nvie/vim-flake8'
-Plugin 'rdnetto/YCM-Generator'
 Plugin 'rhysd/devdocs.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'rstacruz/sparkup'
@@ -55,39 +52,11 @@ Plugin 'venantius/vim-eastwood'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'vim-scripts/spec.vim'
+Plugin 'zxqfl/tabnine-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-" Use enter as expand trigger
-"
-" UltiSnips disables the use of whatever key expands so disable that unless
-" there's a window open, but this makes hittng enter do nothing when the window
-" is open, but nothing is selected, so work around that too.
-
-let g:UltiSnipsExpandTrigger = "<nop>"
-let g:ulti_expand_or_jump_res = 0
-function! <SID>ExpandSnippetOrReturn()
-	let snippet = UltiSnips#ExpandSnippetOrJump()
-	if g:ulti_expand_or_jump_res > 0
-		return snippet
-	else
-		return "\<CR>"
-	endif
-endfunction
-inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 " Space leader!!
 let mapleader = "\<Space>"
@@ -122,18 +91,6 @@ inoremap ;; <ESC>
 
 " Use ;;; to ;;.
 inoremap ;;;  ;;
-
-" YCM commands
-" Try to goto something interesting
-nnoremap <leader>g :YcmCompleter GoTo<cr>
-" Get the type of whatever's under the cursor
-nnoremap <leader>i :YcmCompleter GetType<cr>
-" Seed language keywords.
-"let g:ycm_seed_identifiers_with_syntax=1
-" Auto close preview buffer.
-let g:ycm_autoclose_preview_window_after_insertion=1
-" Stop asking about the extra conf.
-let g:ycm_confirm_extra_conf = 0
 
 " Use Absolute numbers in insert mode
 autocmd InsertEnter * :set norelativenumber
@@ -179,16 +136,19 @@ let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
 " Leader maps for go
 au FileType go nmap <Leader>d <Plug>(go-doc)
 au FileType go nmap <Leader>e <Plug>(go-implements)
+au FileType go nmap <Leader>f <Plug>(go-test-func)
+au FileType go nmap <Leader>g <Plug>(go-def)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>r <Plug>(go-run)
 au FileType go nmap <leader>a :GoAlternate<cr>
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>c <Plug>(go-coverage-toggle)
-au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>m <Plug>(go-metalinter)
+au FileType go nmap <leader>t <Plug>(go-test)
 " make vim-go only open quickfix windows
 let g:go_list_type = "quickfix"
 " use goimports for formatting
@@ -219,14 +179,9 @@ let g:syntastic_quiet_messages = {}
 let g:syntastic_aggregate_errors = 1
 
 " C Stuff
-"
-" path to extra_conf for c family languages
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " help with that annoying -> syntax in C
 inoremap ;/ ->
-" autocompete automatically-er with C
-let g:ycm_key_invoke_completion = '<leader>;'
 
 " size of a hard tabstop
  set tabstop=2
@@ -366,8 +321,6 @@ nnoremap <silent> <Leader>? :RgHiddenAll<CR>
 " Clojure stuff.
 " require-reload on save
 autocmd BufWritePost Filetype clojure :Require<cr>
-" omnifunc completion
-let g:ycm_semantic_triggers = {'clojure' : ['.', '/', '(']}
 
 " Mail stuff.
 " Spell check
