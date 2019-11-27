@@ -5,24 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-#PS1='[\u@\h \W]\$ '
+# Get rid of horrible GUI user/pass dialgue.
+unset SSH_ASKPASS
 
-# color bash prompt
-#PS1='[\u@\h \W]\$ '  # To leave the default one
-#DO NOT USE RAW ESCAPES, USE TPUT
-reset=$(tput sgr0)
-red=$(tput setaf 1)
-blue=$(tput setaf 4)
-green=$(tput setaf 2)
-
-PS1=' $(if [ $? -eq 0 ]; then \
-echo "\[$green\]✔\[$reset\]"; \
-else echo "\[$red\]✘\[$reset\]"; fi) \
-\[$red\]\u\[$reset\] \[$blue\]\w \
-$(if git_branch=$(git rev-parse --abbrev-ref HEAD 2>&1); \
-then echo "($git_branch) "; fi)\[$reset\]\
-\[$red\]\$ \[$reset\]'
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #-------------------------------------------------------------------------------
 # Colored Man Pages!!
@@ -39,40 +25,41 @@ man() {
     man "$@"
 }
 
-#-----------------------------------------------------------
-# Aliases
-#-----------------------------------------------------------
+alias l='exa --long --header --time-style=long-iso --only-dirs --sort=modified'
+alias ll='exa --long --header --time-style=long-iso --sort=modified --group-directories-first'
+alias lla='exa --long --all --header --time-style=long-iso --sort=modified --group-directories-first'
 
-alias git=hub
-
-alias cons='nmcli -pretty --fields active,ssid,signal,security device wifi list'
-
-alias reconnect='systemctl restart NetworkManager'
-
+# Enable use of use  with aliases
 alias sudo='sudo '
 
-alias anyonethere='ping -c3 www.google.com'
+alias git-busy='git log --name-only --pretty=format: | sort | uniq -c | sort -nr'
 
-#-----------------------------------------------------------
-# PATH exports
-#-----------------------------------------------------------
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-PATH="$PATH:/home/hayley/flow/"
-export PATH=$HOME/local/bin:$PATH
-
-# Diplay branch when on a git repo
-source ~/.git-prompt.sh
 # color bash prompt
 reset=$(tput sgr0)
 red=$(tput setaf 1)
 blue=$(tput setaf 4)
 
-PS1='\[$red\]\u\[$reset\] \[$blue\]\W$(__git_ps1 " (%s)")\[$reset\]\[$red\] \$\[$reset\] '
+PS1='\[$red\]\u\[$reset\] \[$blue\]\W\[$reset\]\[$red\] \$\[$reset\] '
 
 # Get rid of horrible GUI user/pass dialgue.
 unset SSH_ASKPASS
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    GIT_PROMPT_SHOW_UNTRACKED_FILES=no
+    GIT_PROMPT_THEME=Solarized_Ubuntu
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
+
+# ed is the standard editor!
+export EDITOR='vim'
+
+# --files: List files that would be searched but do not search
+# --no-ignore: Do not respect .gitignore, etc...
+# --hidden: Search hidden files and folders
+# --follow: Follow symlinks
+# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
