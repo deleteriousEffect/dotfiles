@@ -52,6 +52,7 @@ Plugin 'venantius/vim-eastwood'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'vim-scripts/spec.vim'
+Plugin 'wellle/context.vim'
 Plugin 'zxqfl/tabnine-vim'
 
 " All of your Plugins must be added before the following line
